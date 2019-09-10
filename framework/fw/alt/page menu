@@ -1,0 +1,65 @@
+// stylus source for a fully adjustable page menu
+// number of menu sections and their content is dynamic
+// 2 section classes defined: search (text input) and select
+// this approach is more flexible but also more error prone, more code and the hardcoded version is believed to work better
+
+#menu
+    height 2.5vw
+    display flex
+    overflow hidden
+    background-color black
+    margin-bottom 1vw
+    
+    div
+        flex-grow 1
+        transform skew(-30deg)
+        border-right 5px solid white
+        overflow hidden
+        padding 0 1vw
+        color white
+        font-family 'Roboto Condensed', sans
+
+        &:last-of-type
+            border none
+
+        *
+            transform skewX(30deg)
+
+        &.search
+            i
+                margin-right 0.5vw
+
+            input
+                width 90%
+                height 100%
+                background none
+                border none
+                outline none !important
+                color white // no idea why this has to be specified again
+
+                &::placeholder
+                    color white
+
+                &:focus::placeholder
+                    color transparent
+
+        &.select
+
+            display flex
+            justify-content center
+            align-items center
+            cursor pointer
+
+            span
+                display inline-block // inline elements dont skew; block lements fuck up the layout
+                margin-right 0.5vw
+
+                &.selected
+                    font-weight 100
+                    font-style italic
+                    opacity 0.75
+                    color cyan
+                    max-width 10vw // not possible for this to be a percentage
+                    overflow hidden
+                    text-overflow ellipsis
+                    padding 0 2px // italic font goes out 

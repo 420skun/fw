@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "required": ["settings", "info"],
+    "properties": {
+        "settings": {
+            "type": "array",
+            "required": ["section", "settings"],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "section": {"type": "string"},
+                    "settings": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": ["id", "name", "type", "value"],
+                            "properties": {
+                                "name": {"type": "string"},
+                                "id": {"type": "number"}
+                            },
+                            "anyOf": [
+                                {
+                                    "properties": {
+                                        "type": {
+                                            "enum": [1]
+                                        },
+                                        "default": {"type": "boolean"},
+                                        "value": {
+                                            "anyOf": [
+                                                {"type": "boolean"}, {"type": "null"}
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "properties": {
+                                        "type": {
+                                            "enum": [2]
+                                        },
+                                        "value": {
+                                            "anyOf": [
+                                                {"type": "string"}, {"type": "null"}
+                                            ]
+                                        },
+                                        "default": {"type": "string"}
+                                    }
+                                },
+                                {
+                                    "properties": {
+                                        "type": {
+                                            "enum": [3]
+                                        },
+                                        "options": {
+                                            "type": "array",
+                                            "items": {"type": "string"}
+                                        },
+                                        "value": {
+                                            "anyOf": [
+                                                {"type": "number"}, {"type": "null"}
+                                            ]
+                                        },
+                                        "default": {"type": "number"}
+                                    },
+                                    "required": ["options"]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

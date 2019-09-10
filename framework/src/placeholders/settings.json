@@ -1,0 +1,66 @@
+{
+    "$schema": "./settings-schema.json",
+    "info": {
+        "types": {
+            "binary": 1,
+            "input": 2,
+            "select": 3
+        }
+    },
+    "settings": [
+        {
+            "section": "pizda",
+            "settings": [
+                {
+                    "id": 1,
+                    "name": "kutas",
+                    "type": 1,
+                    "default": true,
+                    "value": false
+                },
+                {
+                    "id": 2,
+                    "name": "fiutek",
+                    "type": 3,
+                    "options": ["chuj"],
+                    "default": 0,
+                    "value": null
+                },
+                {
+                    "id": 3,
+                    "name": "chujek",
+                    "type": 2,
+                    "default": "chuj",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "section": "ustawienia obciagania chuja",
+            "settings": [
+                {
+                    "id": 4,
+                    "name": "xxx",
+                    "type": 1,
+                    "default": true,
+                    "value": null
+                },
+                {
+                    "id": 5,
+                    "name": "yyy",
+                    "type": 3,
+                    "options": ["chuj"],
+                    "default": 0,
+                    "value": null
+                },
+                {
+                    "id": 6,
+                    "name": "zzz",
+                    "type": 2,
+                    "default": "chuj",
+                    "value": null
+                }
+            ]
+        }
+    ]
+}
